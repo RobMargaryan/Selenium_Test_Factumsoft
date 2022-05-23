@@ -1,7 +1,6 @@
 package pages;
 
 import constants.locators.CareerConstants;
-import constants.locators.PartnershipConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +22,7 @@ public class CareerPage {
     public WebElement getSqlTitle() {
         WebElement getSqlTitle = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(driver -> driver.findElement(sqlTitle));
-        return driver.findElement(sqlTitle);
+        return getSqlTitle;
     }
 
     public WebElement getJuniorFullTitle() {

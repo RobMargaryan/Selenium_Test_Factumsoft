@@ -27,6 +27,7 @@ public class BaseTest {
     protected ContactUsPage contactUsPage;
     protected RequestDemoPage requestDemoPage;
     protected CareerPage careerPage;
+    protected BlogPage blogPage;
 
     @BeforeSuite
     //@Parameters("browser")
@@ -48,6 +49,7 @@ public class BaseTest {
         partnershipPage = new PartnershipPage(driver);
         requestDemoPage = new RequestDemoPage(driver);
         careerPage = new CareerPage(driver);
+        blogPage = new BlogPage(driver);
     }
 
     @AfterSuite

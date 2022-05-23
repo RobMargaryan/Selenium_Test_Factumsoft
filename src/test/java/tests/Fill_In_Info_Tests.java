@@ -1,10 +1,6 @@
 package tests;
 
 import base.BaseTest;
-import org.checkerframework.checker.units.qual.C;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import constants.messages.*;
 

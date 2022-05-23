@@ -9,10 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.BasePage;
-import pages.PartnershipPage;
-import pages.HomePage;
-import pages.ContactUsPage;
+import pages.*;
 import constants.urls.Urls;
 import java.io.File;
 import java.io.IOException;
@@ -28,17 +25,19 @@ public class BaseTest {
     protected HomePage homePage;
     protected PartnershipPage partnershipPage;
     protected ContactUsPage contactUsPage;
+    protected RequestDemoPage requestDemoPage;
+    protected CareerPage careerPage;
 
     @BeforeSuite
-    @Parameters("browser")
-    public void setUp(String browser) throws MalformedURLException {
-//        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setBrowserName(browser);
+    //@Parameters("browser")
+    public void setUp() throws MalformedURLException {
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        //DesiredCapabilities caps = new DesiredCapabilities();
+        //caps.setBrowserName(browser);
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/"), caps);
+        //driver = new RemoteWebDriver(new URL("http://localhost:4444/"), caps);
 
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         driver.get(Urls.HOME_URL);
@@ -47,10 +46,12 @@ public class BaseTest {
         homePage = new HomePage(driver);
         contactUsPage = new ContactUsPage(driver);
         partnershipPage = new PartnershipPage(driver);
+        requestDemoPage = new RequestDemoPage(driver);
+        careerPage = new CareerPage(driver);
     }
 
     @AfterSuite
-    public void tearDown() {
+   public void tearDown() {
         driver.quit();
     }
 

@@ -2,7 +2,9 @@ package tests;
 
 import base.BaseTest;
 import org.checkerframework.checker.units.qual.C;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import constants.messages.*;
 
@@ -49,7 +51,6 @@ public class Tests extends BaseTest {
         basePage.getPartnershipButton().click();
         WebElement biReportTitle = partnershipPage.getBIReportTitle();
         assertEquals(biReportTitle.getText(), PartnershipMessages.BIREPORT_MESSAGE);
-
 
         basePage.getContactUsButton().click();
         WebElement crmTitle = contactUsPage.getCRMTitle();

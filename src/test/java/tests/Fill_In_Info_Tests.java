@@ -6,8 +6,9 @@ import constants.messages.*;
 
 public class Fill_In_Info_Tests extends BaseTest {
     @Test
-    public void requestDemoTest(){
+    public void requestDemoTest() throws InterruptedException {
         basePage.getRequestDemoButton().click();
+        Thread.sleep(2000);
         requestDemoPage.getFullNameTxtBox().sendKeys(RequestDemoMessages.FULLNAME_MESSAGE);
         requestDemoPage.getLastNameTxtBox().sendKeys(RequestDemoMessages.LASTNAME_MESSAGE);
         requestDemoPage.getEmailTxtBox().sendKeys(RequestDemoMessages.EMAIL_MESSAGE);
@@ -16,8 +17,9 @@ public class Fill_In_Info_Tests extends BaseTest {
         requestDemoPage.getWebsiteTxtBox().sendKeys(RequestDemoMessages.WEBSITE_MESSAGE);
     }
     @Test
-    public void getInTouchWithUsTest(){
+    public void getInTouchWithUsTest() throws InterruptedException {
         basePage.getContactUsButton().click();
+        Thread.sleep(2000);
         contactUsPage.getFullNameTxtBox().sendKeys(ContactUsMessages.FULLNAME_MESSAGE);
         contactUsPage.getEmailTxtBox().sendKeys(ContactUsMessages.EMAIL_MESSAGE);
         contactUsPage.getCompanyTxtBox().sendKeys(ContactUsMessages.COMPANY_MESSAGE);

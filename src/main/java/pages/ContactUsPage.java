@@ -39,7 +39,7 @@ public class ContactUsPage {
     public WebElement getFullNameTxtBox() {
         WebElement getFullName = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(driver -> driver.findElement(fullNameTxtBox));
-        return driver.findElement(fullNameTxtBox);
+        return getFullName;
     }
 
     public WebElement getCompanyTxtBox() {

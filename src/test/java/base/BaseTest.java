@@ -30,15 +30,15 @@ public class BaseTest {
     protected BlogPage blogPage;
 
     @BeforeSuite
-    //@Parameters("browser")
-    public void setUp() throws MalformedURLException {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-        //DesiredCapabilities caps = new DesiredCapabilities();
-        //caps.setBrowserName(browser);
+    @Parameters("browser")
+    public void setUp(String browser) throws MalformedURLException {
+        //System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setBrowserName(browser);
 
-        //driver = new RemoteWebDriver(new URL("http://localhost:4444/"), caps);
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/"), caps);
 
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         driver.get(Urls.HOME_URL);
